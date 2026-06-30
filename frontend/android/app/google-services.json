@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "334566462594",
+    "project_id": "flowplan-ai-a9bfe",
+    "storage_bucket": "flowplan-ai-a9bfe.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:334566462594:android:c160bc72afd1142b8b509b",
+        "android_client_info": {
+          "package_name": "com.example.frontend"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "334566462594-0t2el9qrssbds3553um6d6nea8to2doe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCbOdaz1b5zQ3oXYFtVaaXXEyYu6r_WzhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "334566462594-0t2el9qrssbds3553um6d6nea8to2doe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
