@@ -20,5 +20,4 @@ else:
 
 firebase_admin.initialize_app(cred)
 
-# 2. Added this line so firestore_service.py can import 'db'
 db = firestore.client()
