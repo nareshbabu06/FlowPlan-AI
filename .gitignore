@@ -1,0 +1,9 @@
+backend/.env
+backend/serviceAccountKey.json
+backend/venv/
+backend/__pycache__/
+*.pyc
+frontend/.dart_tool/
+frontend/build/
+.vscode/
+.idea/
