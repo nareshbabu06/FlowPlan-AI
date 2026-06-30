@@ -4,6 +4,8 @@ import 'package:firebase_auth/firebase_auth.dart';
 import '../services/auth_service.dart';
 import 'tasks_screen.dart';
 import 'plan_screen.dart';
+import 'insights_screen.dart';
+import 'reflection_screen.dart';
 
 class HomeScreen extends ConsumerStatefulWidget {
   const HomeScreen({super.key});
@@ -19,13 +21,20 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
     AuthService().signOut();
   }
 
+  void _openReflection() {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => const ReflectionScreen()),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final user = FirebaseAuth.instance.currentUser;
     final screens = [
       const TasksScreen(),
       const PlanScreen(),
-      const _InsightsTab(),
+      const InsightsScreen(),
     ];
 
     return Scaffold(
@@ -37,6 +46,28 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
             onPressed: _logout,
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: Theme.of(context).colorScheme.primaryContainer,
+              ),
+              child: Text('FlowPlan AI',
+                  style: Theme.of(context).textTheme.titleLarge),
+            ),
+            ListTile(
+              leading: const Icon(Icons.auto_awesome),
+              title: const Text('Reflection'),
+              onTap: () {
+                Navigator.pop(context);
+                _openReflection();
+              },
+            ),
+          ],
+        ),
       ),
       body: Column(
         children: [
@@ -58,10 +89,4 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       ),
     );
   }
-}
-
-class _InsightsTab extends StatelessWidget {
-  const _InsightsTab();
-  @override
-  Widget build(BuildContext context) => const Center(child: Text('Insights'));
 }

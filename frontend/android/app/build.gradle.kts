@@ -13,6 +13,8 @@ android {
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
+        // 1. Enable core library desugaring here
+        isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_17
         targetCompatibility = JavaVersion.VERSION_17
     }
@@ -26,6 +28,9 @@ android {
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
+        
+        // 2. Enable multiDex here
+        multiDexEnabled = true
     }
 
     buildTypes {
@@ -45,4 +50,9 @@ kotlin {
 
 flutter {
     source = "../.."
+}
+
+// 3. Add the dependencies block at the absolute bottom for the desugar tool
+dependencies {
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
 }
