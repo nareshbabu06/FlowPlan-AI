@@ -1,1 +1,2 @@
-const String baseUrl = 'http://localhost:8000';
+const String baseUrl = 'https://flowplan-ai-production.up.railway.app';
+const String firebaseApiKey = '';
